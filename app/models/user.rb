@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :email, :password, presence: true
+
+  def close_account
+    update(inactive_at = Time.now)
+  end
 end
