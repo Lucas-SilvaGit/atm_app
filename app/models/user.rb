@@ -9,4 +9,9 @@ class User < ApplicationRecord
   def close_account
     update(inactive_at = Time.now)
   end
+
+  def reactivate_account
+    update(inactive_at = nil)
+  end
+  
 end
