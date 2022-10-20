@@ -2,11 +2,9 @@
 <br/>
 
 <% if user_signed_in? %>
-  <p>Usuario logado</p>
-  <p><%= current_user.email %></p>
+  <p>Usuario logado: <%= current_user.email %></p>
 
-  <p>O número da sua conta</p>
-  <p><%= current_user.id %></p>
+  <p>Número da conta: <%= current_user.id %></p>
 
   <% if current_user.inactive_at.nil? %>
       <%= button_to "Withdraw" %>
