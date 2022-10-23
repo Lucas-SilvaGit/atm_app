@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :site
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  patch '/users/:id', to: 'users#close_account', as: 'users'
 
-  # Defines the root path route ("/")
+  resources :site
+
   root to: "site#index"
 end
