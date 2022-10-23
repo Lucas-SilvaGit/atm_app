@@ -12,7 +12,7 @@
       <%= button_to "Extract" %>
       <%= button_to "Transfer" %>     
 
-      <%# <%= link_to "Close account", accounts_close_path(current_user.id), method: :get %> %>
+      <%= button_to "Close account", users_path(current_user.id), method: :patch %>
   <% else %>
       <%= button_to "Extract" %>    
   <% end %>
