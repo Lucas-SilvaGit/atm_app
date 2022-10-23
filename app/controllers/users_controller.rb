@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
   def close_account
-    current_user.update(inactive: Time.now)
+    current_user.update(inactive_at: Time.now)
   end
 end
