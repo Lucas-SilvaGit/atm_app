@@ -8,7 +8,7 @@
 
   <% if current_user.inactive_at.nil? %>
       <%= button_to "Withdraw" %>
-      <%= button_to "Deposit" %>
+      <%= button_to "Deposit", users_deposit_path, method: :get%>
       <%= button_to "Extract" %>
       <%= button_to "Transfer" %>     
 
