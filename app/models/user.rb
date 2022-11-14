@@ -11,4 +11,11 @@ class User < ApplicationRecord
     
     update(balance: self.balance += value)
   end
+
+  def withdraw(value)
+    return errors.add(:value, message: "o valor nao pode ser negativo") if value.negative?
+    return errors.add(:balance, message: "saldo insuficiente") if value > balance
+    update(balance: self.balance -= value)
+  end
+  
 end
