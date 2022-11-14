@@ -5,22 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   attr_accessor :value
-        validates :email, :password, presence: true
-        # validates :value, numericality: { odd: true }
 
-  def value
-    @value.to_f
-  end
-
-  # def value=(value)
-  #   @value.to_f
-  # end
-
-  def deposit(value) 
-    if value > 0
-      update(balance: self.balance += value, password: 123456)
-    else
-      puts "Please enter a valid value"
-    end
+  def deposit(value)
+    return errors.add(:value, message: "o valor nao pode ser negativo") if value.negative?
+    
+    update(balance: self.balance += value)
   end
 end
