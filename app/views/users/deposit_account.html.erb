@@ -1,0 +1,14 @@
+<h1>Welcome to DEPOSIT</h1>
+
+<%# <%= button_to "Deposit", users_path(current_user), method: :get %> 
+
+<%= form_with model: @user do |form| %>
+  <div>
+    <%= form.label :value %>
+    <%= form.text_field :value %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
