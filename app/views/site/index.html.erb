@@ -7,10 +7,11 @@
   <p>Número da conta: <%= current_user.id %></p>
 
   <% if current_user.inactive_at.nil? %>
-      <%= button_to "Withdraw" %>
       <%= button_to "Deposit", users_deposit_path, method: :get%>
+      <%= button_to "Withdraw"%>
       <%= button_to "Extract" %>
-      <%= button_to "Transfer" %>     
+      <%= button_to "Transfer" %>
+      <%= button_to "Balance", users_balance_account_path, method: :get %>
 
       <%= button_to "Close account", users_path(current_user), method: :get %>
   <% else %>
@@ -24,4 +25,5 @@
 
   <p>Por favor realizar login</p>
   <%= link_to "Login", user_session_path%>
+  
 <% end %>
