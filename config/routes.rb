@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/users/deposit_account', to: 'users#deposit_account', as: 'users_deposit'
   post '/users/deposit', to: 'users#deposit'
 
+  get '/users/balance_account', to: 'users#balance_account'
+  
   resources :site
 
   root to: "site#index"
